@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="styles/10-rock-paper-scissors.css">
 </head>
 <body>
-  <p class="title">Rock Paper Scissors</p>
-  <button onclick="playGame('rock')" class="move-button"><img src="images/rock-emoji.png"class="move-icon"></button>
-  <button onclick="playGame('paper')" class="move-button"><img src="images/paper-emoji.png"class="move-icon"></button>
-  <button onclick="playGame('scissors')" class="move-button"><img src="images/scissors-emoji.png" class="move-icon"></button>
-  <p class="js-result result"></p>
-  <p class="js-moves"></p>
-  <p class="js-score score"></p>
-  <button onclick="
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    updateScoreElement();
-  " class="reset">Reset Score</button>
+  <div class="game-card">
+    <p class="title">Rock Paper Scissors</p>
+
+    <div class="move-buttons">
+      <button onclick="playGame('rock')" class="move-button" aria-label="Play rock">
+        <img src="images/rock-emoji.png" alt="Rock" class="move-icon">
+      </button>
+      <button onclick="playGame('paper')" class="move-button" aria-label="Play paper">
+        <img src="images/paper-emoji.png" alt="Paper" class="move-icon">
+      </button>
+      <button onclick="playGame('scissors')" class="move-button" aria-label="Play scissors">
+        <img src="images/scissors-emoji.png" alt="Scissors" class="move-icon">
+      </button>
+    </div>
+
+    <div class="status-panel">
+      <p class="js-result result">Choose a move to start!</p>
+      <p class="js-moves moves">Your move will show here.</p>
+      <p class="js-score score">Wins: 0, Losses: 0, Ties: 0</p>
+    </div>
+
+    <button onclick="resetScore()" class="reset-button">Reset Score</button>
+  </div>
 
   <script src="scripts/10-rock-paper-scissors.js"></script>
 </body>
